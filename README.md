@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ⚡ Pokémon Explorer - Explorador de PokeAPI
 
 Aplicación web interactiva que utiliza la **PokeAPI** para explorar el mundo Pokémon con programación asíncrona avanzada y una interfaz moderna.
@@ -43,14 +42,14 @@ Aplicación web interactiva que utiliza la **PokeAPI** para explorar el mundo Po
 
 ## 📦 Estructura del Proyecto
 
-```
+
 pokemon-explorer/
 │
 ├── index.html          # Estructura HTML con modal
 ├── styles.css          # Estilos CSS con sistema de colores por tipo
 ├── app.js             # Lógica JavaScript con PokeAPI
 └── README.md          # Documentación del proyecto
-```
+
 
 ## 🚀 Cómo Ejecutar el Proyecto
 
@@ -66,25 +65,25 @@ pokemon-explorer/
 
 ### 1. Asincronía con Async/Await
 
-```javascript
+
 async function fetchPokemon(idOrName) {
     const response = await fetch(`${API_URLS.pokemon}/${idOrName}`);
     if (!response.ok) throw new Error('Pokémon no encontrado');
     return await response.json();
 }
-```
+
 
 ### 2. Carga Múltiple con Promise.all()
 
-```javascript
+
 const promises = randomIds.map(id => fetchPokemon(id));
 const pokemons = await Promise.all(promises);
 pokemons.forEach(pokemon => addPokemonToContainer(pokemon));
-```
+
 
 ### 3. Manejo de Errores Robusto
 
-```javascript
+
 try {
     const pokemon = await fetchPokemon(searchTerm);
     addPokemonToContainer(pokemon);
@@ -94,16 +93,16 @@ try {
 } finally {
     toggleLoading(false);
 }
-```
+
 
 ### 4. Generación de Números Aleatorios Únicos
 
-```javascript
+
 const randomIds = new Set();
 while (randomIds.size < 6) {
     randomIds.add(getRandomNumber(1, 898));
 }
-```
+
 
 ## 🎨 Características de UI/UX
 
@@ -119,19 +118,19 @@ while (randomIds.size < 6) {
 ## 🌐 Endpoints de PokeAPI Utilizados
 
 ### Obtener Pokémon
-```
+
 GET https://pokeapi.co/api/v2/pokemon/{id or name}
-```
+
 
 ### Obtener Pokémon por Tipo
-```
+
 GET https://pokeapi.co/api/v2/type/{type}
-```
+
 
 ### Obtener Información de Especie
-```
+
 GET https://pokeapi.co/api/v2/pokemon-species/{id}
-```
+
 
 ## 🎯 Tipos de Pokémon Disponibles
 
@@ -241,16 +240,3 @@ Este proyecto demuestra:
   - Filtrado de repositorios (por ejemplo por lenguaje o estrellas). La mayoría de APIs que os proprongo tienen algún sistema similar.
   - Un componente para mostrar detalles de la información al hacer clic.
   - Integración con notificaciones usando signals para actualizaciones en tiempo real.
- 
-  # Formato de entrega:
-
-  - Vuestra propuesta de proyecto y documentación del mismo.
-  - Para la generación de la documentación está permitida el uso (pero no el abuso) de algunas IAs siempre y cuando reviséis lo que entregáis.
-  - El código fuente del proyecto en este repo.
-  - Algunas imágenes del funcionamiento de vuestro proyecto en local o en github pages (esto último es totalmente voluntario).
- 
- # Fecha de entrega
-
-  - El lunes 3 de noviembre a las 23:59 h.
-  - Tened en cuenta la penalización establecida como es habitual.
->>>>>>> c43f434d55bdb74c13d50a6dd91c8302d8f9c27d
